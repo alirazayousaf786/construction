@@ -1,0 +1,69 @@
+.header-navbar{
+    background-color: oklch(27.4% 0.006 286.033);
+}
+.header-ul li{
+    font-size: 14px;
+    font-weight: 400;
+}
+.counter-left-div {
+    border-style: solid;
+    border-color: oklch(12.9% 0.042 264.695) ;
+    border-radius:12px 0px 0px 12px ;
+    border-width: 0px 0px 0px 12px; 
+}
+.counter-right-side{
+    border-style: solid;
+    border-color: oklch(51.4% 0.222 16.935);
+    border-radius:0px 12px 12px 0px ;
+    border-width: 0px 12px 0px 0px; 
+}
+
+.move-up-down {
+  width: 80px;
+  height: 80px;
+  animation: updown 2s ease-in-out infinite;
+}
+
+@keyframes updown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px); 
+  }
+}
+.partnership-firstSide{
+     border-style: solid;
+    border-color: oklch(51.4% 0.222 16.935); 
+    border-radius:12px 12px 12px 12px ;
+    border-width: 0px 0px 0px 8px; 
+}
+.vertical-text span {
+    writing-mode: vertical-rl; 
+    text-orientation: mixed;   
+    font-weight: bold;
+   
+    
+}
+.vertical-text{
+ 
+ color: white;
+ border-radius: 0px 0px 12px 12px;
+}
+
+
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-slide {
+  animation: marqueeScroll 15s linear infinite;
+}
+
+
+
