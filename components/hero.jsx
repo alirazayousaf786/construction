@@ -48,7 +48,7 @@ export default function ResponsiveCarousel() {
 
   return (
     <div className="w-full relative">
-      <div className="relative w-full h-[450px] sm:h-[550px] md:h-[650px] overflow-hidden rounded-xl shadow-2xl">
+      <div className="relative w-full h-[450px] sm:h-[550px] md:h-[650px] overflow-hidden  shadow-2xl">
         {slides.map((slide, index) => (
           <div
             key={index}
