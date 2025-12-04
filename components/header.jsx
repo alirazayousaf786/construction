@@ -15,16 +15,14 @@ import "./component.css";
 export default function Header() {
   const [sticky, setSticky] = useState(false);
   const [open, setOpen] = useState(false);
-  const [selectOpen, setSelectOpen] = useState(false); 
+  const [selectOpen, setSelectOpen] = useState(false);
   const pathname = usePathname();
 
-  
   const isActive = (path) =>
     pathname === path
       ? "text-rose-800 bg-white px-3 py-1 rounded-md"
-      : "text-white hover:text-rose-300";
+      : "text-white hover:text-rose-800";
 
- 
   useEffect(() => {
     const handleScroll = () => setSticky(window.scrollY > 100);
     window.addEventListener("scroll", handleScroll);
@@ -36,7 +34,6 @@ export default function Header() {
       <div className="w-full bg-rose-800 h-auto md:h-32 pt-3">
         <div className="max-w-[1300px] mx-auto">
           <div className="flex items-center justify-between gap-6 px-4 flex-wrap">
-
             <h1 className="text-xl md:text-2xl font-extrabold tracking-wide text-white">
               AY CONSTRUCTION
             </h1>
@@ -70,7 +67,7 @@ export default function Header() {
 
             {/* Mobile Toggle Button */}
             <div
-              className="md:hidden text-white text-3xl "
+              className="md:hidden text-white text-3xl z-99 "
               onClick={() => setOpen(!open)}
             >
               {open ? <IoMdClose /> : <GiHamburgerMenu />}
@@ -78,19 +75,15 @@ export default function Header() {
           </div>
         </div>
 
-        
         <div
           className={`${
             sticky
               ? "fixed top-0 left-0 w-full shadow-lg z-200 bg-rose-800"
-              : "absolute left-1/2 -translate-x-1/2 w-[90%] md:w-[80%] "
-          } transition-all duration-700 ease-in-out mx-auto header-navbar`}
+              : "absolute  w-full  "
+          }  header-navbar`}
         >
           <div className="flex items-center justify-between gap-5 p-3 max-w-[1300px] mx-auto">
-
-           
             <ul className="hidden md:flex items-center gap-10 relative">
-
               <li className={isActive("/")}>
                 <Link href="/">HOME</Link>
               </li>
@@ -115,46 +108,48 @@ export default function Header() {
                 <Link href="/contact">CONTACT</Link>
               </li>
 
-              
-              <li className="relative cursor-pointer">
-                <div
-                  className="flex items-center gap-2 text-white hover:text-rose-200 font-semibold"
-                  onClick={() => setSelectOpen(!selectOpen) }
-                >
-                  Pages <FaAngleDown />
+              <li className="relative cursor-pointer group">
+                <div className="flex items-center gap-2 text-white hover:text-rose-800 font-semibold">
+                  PAGES <FaAngleDown />
                 </div>
 
-                {selectOpen && (
-                  <div className="absolute top-10 left-0 bg-white text-rose-800 rounded-md shadow-lg w-40 z-100">
-                    <Link href="/blog" className="block px-4 py-2 hover:bg-rose-200">
-                      Blog
-                    </Link>
-                    <Link href="/careers" className="block px-4 py-2 hover:bg-rose-200">
-                      Careers
-                    </Link>
-                    <Link href="/about" className="block px-4 py-2 hover:bg-rose-200">
-                      Protofiol
-                    </Link>
-                    <Link href="/gallery" className="block px-4 py-2 hover:bg-rose-200">
-                      Gallery
-                    </Link>
-                  </div>
-                )}
+                
+                <div
+                  className="absolute top-10 left-0 p-4 hover:border-b-4 hover:border-b-rose-800 bg-white text-rose-800 rounded-md shadow-lg w-40 opacity-0 invisible group-hover:opacity-100 group-hover:visible  transition-all duration-300 z-99 "
+                >
+                  <Link
+                    href="/blog"
+                    className="block px-4 py-2 hover:bg-rose-200 rounded-2xl"
+                  >
+                    Blog
+                  </Link>
+
+                  <Link
+                    href="/career"
+                    className="block px-4 py-2 hover:bg-rose-200 rounded-2xl"
+                  >
+                    Careers
+                  </Link>
+
+                  <Link
+                    href="/gallery"
+                    className="block px-4 py-2 hover:bg-rose-200 rounded-2xl"
+                  >
+                    Gallery
+                  </Link>
+                </div>
               </li>
             </ul>
 
-            
-            <button className="hidden md:block mobile-screen-open">
+            <span className="hidden md:block mobile-screen-open">
               <Button label="GET A QUOTE" />
-            </button>
+            </span>
           </div>
 
           {/* MOBILE MENU */}
           {open && (
             <div className="md:hidden bg-rose-900 px-5 py-3 animate-slide-down ">
-
               <ul className="flex flex-col gap-4 text-white text-lg">
-
                 <li className={isActive("/")}>
                   <Link href="/">HOME</Link>
                 </li>
@@ -178,36 +173,42 @@ export default function Header() {
                 <li className={isActive("/contact")}>
                   <Link href="/contact">CONTACT</Link>
                 </li>
+                
               </ul>
 
-              
               <div className="mt-4">
                 <div
                   className="text-white flex items-center gap-2 cursor-pointer"
                   onClick={() => setSelectOpen(!selectOpen)}
                 >
-                  Pages <FaAngleDown />
+                  PAGES <FaAngleDown />
                 </div>
 
                 {selectOpen && (
-                  <div className="mt-2 bg-white text-rose-800 rounded-md shadow-lg">
-                    <Link href="/blog" className="block px-4 py-2 hover:bg-rose-200">
+                  <div className="mt-2 bg-white text-rose-800 rounded-md shadow-lg z-99">
+                    <Link
+                      href="/blog"
+                      className="block px-4 py-2 hover:bg-rose-200"
+                    >
                       Blog
                     </Link>
-                    <Link href="/careers" className="block px-4 py-2 hover:bg-rose-200">
+                    <Link
+                      href="/career"
+                      className="block px-4 py-2 hover:bg-rose-200"
+                    >
                       Careers
                     </Link>
-                    <Link href="/about" className="block px-4 py-2 hover:bg-rose-200">
-                      Protofiol
-                    </Link>
-                    <Link href="/gallery" className="block px-4 py-2 hover:bg-rose-200">
+
+                    <Link
+                      href="/gallery"
+                      className="block px-4 py-2 hover:bg-rose-200"
+                    >
                       Gallery
                     </Link>
                   </div>
                 )}
               </div>
 
-             
               <button className="mt-5 w-full p-2 border-4 border-double border-white font-bold text-white">
                 GET A QUOTE
               </button>

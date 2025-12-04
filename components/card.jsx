@@ -1,5 +1,7 @@
 import Image from "next/image";
-import { FaArrowRightFromBracket,  } from "react-icons/fa6";
+import { FaArrowRightFromBracket } from "react-icons/fa6";
+import "./component.css";
+
 export default function Card() {
   const cards = [
     {
@@ -23,19 +25,19 @@ export default function Card() {
       paragraph:
         "We undertake large-scale infrastructure projects such as roads, bridges, drainage systems, and public utilities. Our experienced engineers ensure every project meets sustainability and durability standards.",
     },
-    {
+     {
       image: "/safety.webp",
-      title: "Infrastructure Development",
-      referenc: "Building the Foundations of Progress.",
+      title: "Structural Rehabilitation",
+      referenc: "Reinforcing aging foundations with safety compliance.",
       paragraph:
-        "We undertake large-scale infrastructure projects such as roads, bridges, drainage systems, and public utilities. Our experienced engineers ensure every project meets sustainability and durability standards.",
+        "We specialize in strengthening commercial and residential structures by upgrading foundations and components using advanced reinforcement techniques.",
     },
     {
       image: "/safety.webp",
-      title: "Infrastructure Development",
-      referenc: "Building the Foundations of Progress.",
+      title: "Interior Design & Finishing",
+      referenc: "Crafting Interiors that Inspire",
       paragraph:
-        "We undertake large-scale infrastructure projects such as roads, bridges, drainage systems, and public utilities. Our experienced engineers ensure every project meets sustainability and durability standards.",
+        "Our interior design and finishing services add elegance and functionality to your spaces. From flooring and ceilings to lighting and décor, we deliver a seamless blend of style and practicality tailored to client preferences.",
     },
     {
       image: "/safety.webp",
@@ -47,57 +49,51 @@ export default function Card() {
   ];
 
   return (
-    <section className="py-10 px-4 max-w-[1400px] mx-auto">
-      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <section className="py-14 px-4 max-w-[1400px] mx-auto">
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {cards.map((card, index) => (
           <div
             key={index}
-            className="relative bg-white rounded-xl shadow-lg hover:shadow-2xl 
-transition-all duration-300 p-6 flex flex-col gap-4 overflow-hidden 
-border border-transparent hover:border-rose-900 hover:bg-slate-50 cursor-pointer"
+            className="relative bg-white rounded-2xl shadow-xl border border-transparent p-7 overflow-hidden
+            transition-all duration-500 cursor-pointer
+            hover:-translate-y-3 hover:shadow-2xl hover:border-rose-700 
+            group hover:scale-[1.03]"
           >
-            {/* circle svg right  */}
-            <div className="absolute top-0 right-0 -mt-8 -mr-8">
-              <svg
-                width="100"
-                height="100"
-                viewBox="0 0 100 100"
-                className="fill-rose-100"
-              >
-                <circle cx="50" cy="50" r="50" />
-              </svg>
-            </div>
+            <div className="absolute inset-0 bg-gradient-to-br from-rose-100/10 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
 
-            
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0">
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-rose-200/40 rounded-full blur-2xl group-hover:blur-xl transition-all duration-700"></div>
+
+            <div className="flex items-start gap-5">
+              <div className="relative">
+                <div className="absolute inset-0 bg-rose-300/40 blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
                 <Image
                   src={card.image}
                   alt={card.title}
-                  width={60}
-                  height={60}
-                  className="rounded-full border-2 border-rose-200 p-1"
+                  width={70}
+                  height={70}
+                  className="rounded-full border-2 border-rose-300 p-1 group-hover:scale-110 transition-all duration-700"
                 />
               </div>
+
               <div className="flex flex-col">
-                <h3 className="text-xl font-bold text-gray-800">
+                <h3 className="text-xl font-extrabold text-gray-800 tracking-wide group-hover:text-rose-900 transition-all duration-500">
                   {card.title}
                 </h3>
-                <span className="mt-1 text-sm text-gray-500">
+                <span className="text-sm text-gray-600 mt-1 group-hover:text-rose-700 transition">
                   {card.referenc}
                 </span>
               </div>
             </div>
 
-            {/* Paragraph */}
-            <p className="text-gray-600 text-sm">{card.paragraph}</p>
+            <p className="text-gray-600 mt-4 text-sm leading-relaxed group-hover:text-gray-700 transition-all duration-500">
+              {card.paragraph}
+            </p>
 
-            {/* icon add button svg */}
-            <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none rotate-180">
+            <div className="absolute bottom-0 left-0 w-full overflow-hidden rotate-180">
               <svg
                 viewBox="0 0 500 150"
                 preserveAspectRatio="none"
-                className="w-full h-12 fill-rose-50"
+                className="w-full h-14 fill-rose-200 group-hover:fill-rose-300 transition-all duration-500"
               >
                 <path d="M0.00,49.98 C150.00,150.00 349.96,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"></path>
               </svg>
@@ -105,13 +101,10 @@ border border-transparent hover:border-rose-900 hover:bg-slate-50 cursor-pointer
           </div>
         ))}
       </div>
-      <div className="grid grid-cols-1 my-5 ">
-        <div
-          className=" p-6 rounded-2xl shadow-xl border border-slate-200 
-                  hover:shadow-2xl hover:border-rose-900 transition-all duration-300 bg-gradient-to-b from-rose-50 via-slaty-100 to-pink-50"
-        >
-          <div className="flex items-center gap-3 mb-3 ">
-            {/* svg */}
+
+      <div className="grid grid-cols-1 my-10">
+        <div className="p-8 rounded-2xl shadow-xl border border-slate-200 hover:shadow-2xl hover:border-rose-900 transition-all duration-500 group">
+          <div className="flex items-center gap-4 mb-4">
             <svg width="26" height="26" viewBox="0 0 24 24">
               <path
                 d="M4 12h16M4 6h10M4 18h7"
@@ -121,31 +114,28 @@ border border-transparent hover:border-rose-900 hover:bg-slate-50 cursor-pointer
               />
             </svg>
 
-            <h3 className="text-xl font-extrabold text-slate-900 tracking-wide">
+            <h3 className="text-2xl font-extrabold text-slate-900 tracking-wide">
               Ready to Start?
             </h3>
           </div>
 
-          <span className="text-slate-600 text-base block mb-5">
+          <span className="text-slate-600 text-base block mb-6">
             Let’s bring your vision to life.
           </span>
 
-          {/* button */}
           <button className="w-full group">
             <div
-              className="flex flex-row items-center justify-between bg-rose-800 
-                      p-3 rounded-xl shadow-lg border border-rose-900
-                      transition-all duration-300 group-hover:bg-rose-900 
-                      group-hover:shadow-2xl group-hover:scale-[1.02]"
+              className="flex items-center justify-between bg-rose-800 p-4 rounded-xl border border-rose-900 shadow-lg
+              transition-all duration-500 group-hover:bg-rose-900 group-hover:shadow-2xl group-hover:scale-[1.02]"
             >
-              <span className="font-bold text-white text-lg">Emergency Service</span>
-
+              <span className="font-bold text-white text-lg">
+                Emergency Service
+              </span>
               <div
-                className="bg-slate-900 p-2 rounded-lg text-white shadow-md 
-                     transition-all duration-300 group-hover:bg-rose-700 
-                     group-hover:translate-x-2 group-hover:shadow-xl"
+                className="bg-slate-900 p-2 rounded-lg text-white transition-all duration-500 
+                group-hover:bg-rose-700 group-hover:translate-x-2"
               >
-                <FaArrowRightFromBracket size={18} />
+                <FaArrowRightFromBracket size={20} />
               </div>
             </div>
           </button>

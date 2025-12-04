@@ -1,7 +1,10 @@
 "use client";
 import { FaArrowRightToBracket } from "react-icons/fa6";
 import Image from "next/image";
+import { FaArrowRightFromBracket } from "react-icons/fa6";
 import "./component.css";
+import Container from "@/components/container";
+
 export default function PricingCard() {
   const pricings = [
     {
@@ -19,18 +22,18 @@ export default function PricingCard() {
       pricing: "$50",
       describe: "Per Week Billed Annually",
       paragraph:
-        "Designed for teams who need advanced collaboration and premium support..",
+        "Designed for teams who need advanced collaboration and premium support.",
       button: "Get Started",
       icon: <FaArrowRightToBracket />,
       image: "/safety.webp",
-      populer: "Populer",
+      populer: "Popular",
     },
     {
       plan: "ENTERPRISE PLAN",
       pricing: "$100",
       describe: "Per Month Billed Annually",
       paragraph:
-        "A comprehensive package for enterprises requiring tailored solutions..",
+        "A comprehensive package for enterprises requiring tailored solutions.",
       button: "Get Started",
       icon: <FaArrowRightToBracket />,
       image: "/safety.webp",
@@ -39,78 +42,100 @@ export default function PricingCard() {
 
   return (
     <>
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-rose-900 mb-12">
-            Our Pricing Plans
-          </h2>
-          <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8">
-            {pricings.map((price, index) => (
-              <div
-                key={index}
-                className="relative bg-white border border-slate-200 rounded-2xl shadow-xl hover:shadow-2xl hover:border-rose-900 transition-all duration-300 overflow-hidden"
-              >
-                <svg
-                  className="absolute -top-16 -right-16 w-40 h-40 opacity-20 text-rose-900"
-                  fill="currentColor"
-                  viewBox="0 0 100 100"
-                >
-                  <circle cx="50" cy="50" r="50" />
-                </svg>
+      <section className="py-20 relative">
+        <Container>
+          <div className="mx-auto px-4">
+            <h2 className="text-4xl font-extrabold text-center text-rose-900 mb-16 tracking-widest">
+              Our Pricing Plans
+            </h2>
 
-                <div className="p-8 flex flex-col justify-between h-full">
-                  {index === 1 &&(
-                    <div className="vertical-text absolute top-3 right-4 bg-rose-800 p-1">
-                    <span className="text-md">{price.populer}</span>
-                  </div>
+            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10">
+              {pricings.map((price, index) => (
+                <div
+                  key={index}
+                  className="
+                  relative rounded-3xl overflow-hidden shadow-2xl border border-rose-200
+                  bg-white/80 backdrop-blur-xl transition-all duration-500 
+                  hover:-translate-y-3 hover:shadow-rose-300 hover:shadow-2xl
+                  group
+                "
+                >
+                  <div className="absolute -top-20 -right-20 w-60 h-60 bg-rose-900/10 rounded-full blur-3xl"></div>
+                  <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-rose-700/10 rounded-full blur-3xl"></div>
+
+                  {index === 1 && (
+                    <div className="absolute top-3 right-3 bg-rose-700 text-white text-sm px-3 py-1 rounded-full tracking-wide">
+                      {price.populer}
+                    </div>
                   )}
-                  <div>
+
+                  <div className="p-10 relative z-10">
                     {index === 1 && (
-                      <span className="relative flex size-3 mb-3">
-                        <span className="absolute  inline-flex h-full w-full animate-ping rounded-full bg-rose-400 opacity-75"></span>
-                        <span className="relative inline-flex size-3 rounded-full bg-rose-500"></span>
-                      </span>
+                      <div className="flex justify-center mb-4">
+                        <div className="relative flex size-3">
+                          <span className="absolute inline-flex h-full w-full rounded-full bg-rose-400 animate-ping opacity-70"></span>
+                          <span className="relative inline-flex size-3 rounded-full bg-rose-900"></span>
+                        </div>
+                      </div>
                     )}
-                  </div>
-                  {/* Header */}
-                  <div className="mb-6">
-                    <span className="text-sm font-semibold text-rose-900">
-                      {price.plan}
-                    </span>
-                    <div className="flex items-center mt-2">
-                      <span className="text-4xl font-bold text-rose-900">
-                        {price.pricing}
+
+                    <div className="text-center mb-6">
+                      <span className="text-sm font-semibold tracking-wide text-rose-900">
+                        {price.plan}
                       </span>
-                      <span className="ml-2 text-sm text-gray-500">
-                        {price.describe}
-                      </span>
+                      <div className="flex items-center justify-center mt-3">
+                        <span className="text-5xl font-extrabold text-rose-900 drop-shadow-sm">
+                          {price.pricing}
+                        </span>
+                        <span className="ml-2 text-sm text-gray-600">
+                          {price.describe}
+                        </span>
+                      </div>
+                    </div>
+
+                    <p className="text-gray-700 text-center text-sm leading-relaxed mb-6">
+                      {price.paragraph}
+                    </p>
+
+                    <button className="w-full group">
+                      <div
+                        className="flex items-center justify-between bg-rose-800 p-2 text-white rounded-xl border border-rose-900 shadow-lg
+                                 transition-all duration-500 group-hover:bg-rose-900 group-hover:shadow-2xl group-hover:scale-[1.02]"
+                      >
+                        <span>{price.button}</span>
+                        <div
+                          className="bg-slate-900 p-2 rounded-lg text-white transition-all duration-500 
+                                   group-hover:bg-rose-700 group-hover:translate-x-2"
+                        >
+                          <FaArrowRightFromBracket size={20} />
+                        </div>
+                      </div>
+                    </button>
+                    <div className="mt-8 rounded-xl overflow-hidden h-[220px] relative group">
+                      <Image
+                        src={price.image}
+                        alt={price.plan}
+                        width={300}
+                        height={200}
+                        className="
+                          w-full h-full object-cover 
+                          transition-all duration-500 
+                          group-hover:scale-110
+                        "
+                      />
+                      <div
+                        className="
+                        absolute inset-0 bg-gradient-to-t from-black/40 to-transparent
+                        opacity-0 group-hover:opacity-100 transition-all duration-500
+                      "
+                      ></div>
                     </div>
                   </div>
-
-                  {/* Paragraph */}
-                  <p className="text-gray-600 mb-6">{price.paragraph}</p>
-
-                  {/* Button */}
-                  <button className="bg-rose-900 hover:bg-rose-700 text-white px-6 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300">
-                    <span>{price.button}</span>
-                    <span>{price.icon}</span>
-                  </button>
-
-                  {/* Image */}
-                  <div className="mt-6 overflow-hidden w-full h-[230px] rounded-xl group">
-                    <Image
-                      src={price.image}
-                      alt={price.plan}
-                      width={200}
-                      height={200}
-                      className="w-full h-full object-cover rounded-xl transition-transform duration-300 group-hover:scale-105"
-                    />
-                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        </Container>
       </section>
     </>
   );

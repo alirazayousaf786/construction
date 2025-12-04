@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Container from "@/components/container";
+
 export default function Counter() {
   const [counter, setCounter] = useState(1);
   const [counter1, setCounter1] = useState(1);
@@ -8,42 +9,26 @@ export default function Counter() {
   const [counter3, setCounter3] = useState(1);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCounter((prev) => {
-        if (prev >= 200) {
-          clearInterval(interval);
-          return prev;
-        }
-        return prev + 1;
-      });
-    }, 0);
-    const interval1 = setInterval(() => {
-      setCounter1((prev) => {
-        if (prev >= 150) {
-          clearInterval(interval);
-          return prev;
-        }
-        return prev + 1;
-      });
-    }, 0);
-    const interval2 = setInterval(() => {
-      setCounter2((prev) => {
-        if (prev >= 80) {
-          clearInterval(interval);
-          return prev;
-        }
-        return prev + 1;
-      });
-    }, 0);
-    const interval3 = setInterval(() => {
-      setCounter3((prev) => {
-        if (prev >= 30) {
-          clearInterval(interval);
-          return prev;
-        }
-        return prev + 1;
-      });
-    }, 0);
+    const interval = setInterval(() => setCounter(prev => {
+      if (prev >= 200) return prev;
+      return prev + 1;
+    }), 20);
+
+    const interval1 = setInterval(() => setCounter1(prev => {
+      if (prev >= 150) return prev;
+      return prev + 1;
+    }), 25);
+
+    const interval2 = setInterval(() => setCounter2(prev => {
+      if (prev >= 80) return prev;
+      return prev + 1;
+    }), 40);
+
+    const interval3 = setInterval(() => setCounter3(prev => {
+      if (prev >= 30) return prev;
+      return prev + 1;
+    }), 60);
+
     return () => {
       clearInterval(interval);
       clearInterval(interval1);
@@ -53,16 +38,11 @@ export default function Counter() {
   }, []);
 
   return (
-    <>
-      <Container>
-        <section>
-        {/* main section div */}
-        <div className="w-full h-auto grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 p-2">
-          {/* Left side  */}
-          <div className="max-w-3/3 h-32 bg-rose-800 flex flex-row gap-1 items-center justify-around sm:flex-wrap animate-fade-right counter-left-div">
-            <div className="flex flex-row items-center gap-2 ">
-              <div className="animate-fade-up">
-                <svg
+    <Container>
+      <section className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4 p-4">
+        <div className="flex flex-wrap justify-around bg-rose-800 text-amber-50 p-6 rounded-xl shadow-lg border-l-4 border-l-slate-900">
+          <div className="flex flex-col items-center gap-2 w-36 ">
+             <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="100"
                   height="100"
@@ -183,20 +163,12 @@ export default function Counter() {
                     d="M111.33 115.39c-.14-.18-.17-.47-.17-.47h-.03c-.36-.03-4.67-.21-4.67-.21c-.02-1.39-.59-3.05-.98-4.38c-.26-.03-.57 0-.84-.09c.34 1.31.97 2.84 1.01 4.18c.03.9-.03 1.79-.22 2.67c-.15.71-.39 1.43-.91 1.94s-1.37.72-1.98.33c-.49-.31-.7-.91-.82-1.48c-.12-.6-.17-1.21-.14-1.81c.05-1.29.4-2.7-.29-3.78c-.45-.7-1.32-1.11-2.14-1.01c-.53.06-1.03.34-1.39.73c-.17.19-.83 1.13-.15 1.15c.19 0 .36-.13.51-.25c.46-.37 1.04-.71 1.61-.54c.7.21.97 1.06 1 1.79c.04 1-.17 1.99-.17 2.98c0 1 .27 2.07 1.04 2.7c-1.04.23-1.81 1.26-1.84 2.33c-.03 1.07.64 2.09 1.57 2.61c-.87.02-1.63.72-1.86 1.56c-.23.84.03 1.76.56 2.45c.23.3.51.56.85.72c.07.03.15.05.23.07l.32-.46l-.11.15l-.22.31c.23.07.48.11.72.15c.14.02.28.04.43.05c1.09.14 2.18.28 3.27.41c.05.01.09.01.14.02c-.89-.3-1.83-.38-2.74-.61s-1.82-.66-2.33-1.45c-.5-.79-.41-2 .38-2.49c.48-.3 1.07-.28 1.63-.24c.89.06 1.77.17 2.65.31c.24.04.48.08.71.12l.18.03c.05.01.09.02.14.02c.1.02.2.04.29.05l.15.03c.1.02.19.04.28.05l.14.03c.13.03.27.05.39.08c.27.06.49.13.7.2c.06.02.13.03.19.05c-.14-.23.03-.58.29-.62l-.14-.03l-4.89-.96c-.64-.13-1.3-.26-1.85-.59c-.6-.36-1.06-.98-1.15-1.68c-.09-.7.24-1.45.86-1.78c.47-.26 1.03-.25 1.57-.24c2.51.08 5.02.37 7.49.86c.02 0 .05.01.07.01c-.16-.31 0-.75.32-.89c-.04 0-.08-.01-.11-.01c-1.98-.18-3.96-.37-5.94-.55c1.21-1.06 1.39-2.85 1.48-4.45c0-.01 4.71-.07 4.91-.07z"
                   />
                 </svg>
-              </div>
-              <div>
-                <span className="text-3xl font-bold text-amber-50 ">
-                  {counter}
-                </span>
-                <h2 className="text-lg font-bold text-amber-50 ">
-                  Expert Workers
-                </h2>
-              </div>
-            </div>
+            <span className="text-3xl font-bold">{counter}</span>
+            <h2 className="text-lg font-semibold text-center">Expert Workers</h2>
+          </div>
 
-            <div className="flex flex-row items-center gap-2 ">
-              <div className="animate-fade-up">
-                <svg
+          <div className="flex flex-col items-center gap-2 w-36">
+            <svg
                   width="100"
                   height="100"
                   xmlns="http://www.w3.org/2000/svg"
@@ -335,22 +307,14 @@ export default function Counter() {
                     </defs>
                   </g>
                 </svg>
-              </div>
-              <div>
-                <span className="text-3xl font-bold text-amber-50 ">
-                  {counter1}
-                </span>
-                <h2 className="text-lg font-bold text-amber-50 ">
-                  Happy Clients
-                </h2>
-              </div>
-            </div>
+            <span className="text-3xl font-bold">{counter1}</span>
+            <h2 className="text-lg font-semibold text-center">Happy Clients</h2>
           </div>
-          {/* Right Side */}
-          <div className="max-w-3/3 h-32 bg-slate-800 flex flex-row gap-1 items-center justify-around sm:flex-wrap animate-fade-left counter-right-side">
-            <div className="flex flex-row items-center gap-2 ">
-              <div className="animate-fade-up">
-                <svg
+        </div>
+
+        <div className="flex flex-wrap justify-around bg-slate-800 text-amber-50 p-6 rounded-xl shadow-lg border-r-4 border-r-rose-900">
+          <div className="flex flex-col items-center gap-2 w-36">
+           <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="100"
                   height="100"
@@ -557,21 +521,12 @@ export default function Counter() {
                     </defs>
                   </g>
                 </svg>
-              </div>
-              <div>
-                <span className="text-3xl font-bold text-amber-50 ">
-                  {counter2}
-                </span>
-                <h2 className="text-lg font-bold text-amber-50 ">
-                  Completed Projects
-                </h2>
-              </div>
-            </div>
+            <span className="text-3xl font-bold">{counter2}</span>
+            <h2 className="text-lg font-semibold text-center">Projects Done</h2>
+          </div>
 
-            <div className="flex flex-row items-center gap-2 ">
-              <div className="animate-fade-up">
-                {" "}
-                <svg
+          <div className="flex flex-col items-center gap-2 w-36">
+            <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="100"
                   height="100"
@@ -599,20 +554,11 @@ export default function Counter() {
                     d="M34.844 24v-1H20.656v1h.844v2.469h-.844v1h14.188v-1H34V24z"
                   />
                 </svg>
-              </div>
-              <div>
-                <span className="text-3xl font-bold text-amber-50 ">
-                  {counter3}
-                </span>
-                <h2 className="text-lg font-bold text-amber-50 ">
-                  Running Projects
-                </h2>
-              </div>
-            </div>
+            <span className="text-3xl font-bold">{counter3}</span>
+            <h2 className="text-lg font-semibold text-center">Awards Won</h2>
           </div>
         </div>
       </section>
-      </Container>
-    </>
+    </Container>
   );
 }

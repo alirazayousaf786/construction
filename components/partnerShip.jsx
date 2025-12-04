@@ -1,206 +1,156 @@
+"use client";
 import Image from "next/image";
 import Counter from "../components/counter";
 import { FaArrowRightFromBracket } from "react-icons/fa6";
 import Fourth from "../components/fourhero";
 import Container from "@/components/container";
 import "./component.css";
+
 export default function PartNerShip() {
   return (
     <>
       <Container>
-        <section>
-          {/* Partnership main div */}
+        <section className="py-10">
           <Counter />
-          <div>
-            {/* Partnership top div */}
-            <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-1 w-full  ">
-              <div className=" flex items-center justify-center-safe p-3">
-                <Image
-                  src="/safety.webp"
-                  alt="image"
-                  width={250}
-                  height={250}
-                  className="object-cover rounded-2xl transition-all duration-300 hover:translate-x-2 "
-                />
-              </div>
-              <div className="bg-slate-900 mt-5 text-center p-2 rounded-xl m-2 text-white shadow-xl">
-                <div className="flex items-center justify-center">
-                  <Image
-                    src="/partnership-1.png"
-                    alt="image"
-                    width={100}
-                    height={100}
-                    className="object-cover  move-up-down"
-                  />
-                </div>
-                <span className="text-xl font-bold text-white">
-                  Building Partnerships for Success
-                </span>
-                <p className="text-[16px] text-zinc-300">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
-                  maxime fugit molestias quo eligendi voluptate nulla adipisci
-                  totam, eos odio, consequatur, voluptatibus esse vero quae
-                  tempora quasi qui cum ducimus!
-                </p>
-              </div>
-              <div className=" flex items-center justify-center-safe p-3  ">
-                <Image
-                  src="/safety-briefing.webp"
-                  alt="image"
-                  width={250}
-                  height={250}
-                  className="object-cover rounded-2xl transition-all duration-300 hover:translate-x-2 "
-                />
-              </div>
+
+          {/* Top main 3-grid */}
+          <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-5 w-full mt-10">
+
+            {/* Left Image */}
+            <div className="flex items-center justify-center p-3">
+              <Image
+                src="/safety.webp"
+                alt="image"
+                width={270}
+                height={270}
+                className="rounded-2xl shadow-xl hover:scale-105 transition-all duration-500"
+              />
             </div>
 
-            {/* partnership bottom div */}
-            <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-2">
-              <div className="">
-                <div className="bg-slate-900 w-96 mx-auto p-4 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 space-y-4 partnership-firstSide">
-                  {/* Top Section */}
-                  <div className="flex justify-between items-center">
-                    {/* Left */}
-                    <div className="flex flex-row gap-3 items-center">
-                      <Image
-                        src="/constructionImage_04.png"
-                        alt="image"
-                        width={40}
-                        height={40}
-                        className="object-cover rounded-lg"
-                      />
+            {/* Center box */}
+            <div className="bg-slate-900 text-center p-6 rounded-2xl text-white shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 relative overflow-hidden">
+              {/* Gradient Glow */}
+              {/* <div className="absolute inset-0  opacity-0 hover:opacity-100 transition-all duration-500"></div> */}
 
-                      <div className="flex flex-col leading-tight">
-                        <span className="text-xl font-semibold text-white">
-                          Certified & Awards
-                        </span>
-                        <span className="text-sm text-zinc-400">Winner*</span>
-                      </div>
-                    </div>
+              <div className="flex items-center justify-center relative z-10">
+                <Image
+                  src="/partnership-1.png"
+                  alt="image"
+                  width={110}
+                  height={110}
+                  className="move-up-down opacity-90"
+                />
+              </div>
 
-                    {/* Right Icon */}
-                    <Image
-                      src="/shape3.png"
-                      alt="shape"
-                      width={25}
-                      height={25}
-                      className="object-contain opacity-70"
-                    />
-                  </div>
+              <span className="text-xl font-bold block relative z-10">
+                Building Partnerships for Success
+              </span>
+              <p className="text-[15px] text-zinc-300 mt-2 relative z-10">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
+                maxime fugit molestias quo eligendi voluptate nulla adipisci.
+              </p>
+            </div>
 
-                  {/* Paragraph */}
-                  <p className="text-zinc-300 text-sm leading-relaxed">
-                    Recognized for excellence in construction and quality
-                    standards.
-                  </p>
+            <div className="flex items-center justify-center p-3">
+              <Image
+                src="/safety-briefing.webp"
+                alt="image"
+                width={270}
+                height={270}
+                className="rounded-2xl shadow-xl hover:scale-105 transition-all duration-500"
+              />
+            </div>
+          </div>
 
-                  {/* Button */}
-                  <button className="w-full group">
-                    <div
-                      className="flex flex-row items-center justify-between bg-rose-800 
-                                     p-3 rounded-xl shadow-lg border border-rose-900
-                                     transition-all duration-300 group-hover:bg-rose-900 
-                                     group-hover:shadow-2xl group-hover:scale-[1.02]"
-                    >
-                      <span className="font-bold text-white text-lg">
-                        Construction
-                      </span>
+          
+          <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-5 mt-10">
+            
+            
+            <SimpleCard
+              img="/constructionImage_04.png"
+              title="Certified & Awards"
+              subtitle="Winner*"
+              desc="Recognized for excellence in construction and quality standards."
+              btn="Construction"
+            />
 
-                      <div
-                        className="bg-slate-900 p-2 rounded-lg text-white shadow-md 
-                                    transition-all duration-300 group-hover:bg-rose-700 
-                                    group-hover:translate-x-2 group-hover:shadow-xl"
-                      >
-                        <FaArrowRightFromBracket size={18} />
-                      </div>
-                    </div>
-                  </button>
+          
+            <SimpleCard
+              img="/constructionImage_05.png"
+              title="Best Quality"
+              subtitle="Services*"
+              desc="Committed to delivering superior quality in every project."
+              btn="Project"
+            />
+
+         
+            <div className="grid grid-cols-2 gap-3">
+              {["/p1.jpg", "/p2.jpg", "/p3.jpg", "/p4.jpg"].map((item, i) => (
+                <div key={i} className="relative rounded-xl overflow-hidden group">
+                  <Image
+                    src={item}
+                    alt={item}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-all duration-500"
+                  />
                 </div>
-              </div>
-              <div className="">
-                <div className="bg-slate-900 w-96 mx-auto p-4 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 space-y-4 partnership-firstSide">
-                  {/* Top Section */}
-                  <div className="flex justify-between items-center">
-                    {/* Right */}
-                    <div className="flex flex-row gap-3 items-center">
-                      <Image
-                        src="/constructionImage_05.png"
-                        alt="image"
-                        width={40}
-                        height={40}
-                        className="object-cover rounded-lg"
-                      />
-
-                      <div className="flex flex-col leading-tight">
-                        <span className="text-xl font-semibold text-white">
-                          Best Quality
-                        </span>
-                        <span className="text-sm text-zinc-400">Services*</span>
-                      </div>
-                    </div>
-
-                    {/* Right Icon */}
-                    <Image
-                      src="/shape3.png"
-                      alt="shape"
-                      width={25}
-                      height={25}
-                      className="object-contain opacity-70"
-                    />
-                  </div>
-
-                  {/* Paragraph */}
-                  <p className="text-zinc-300 text-sm leading-relaxed">
-                    Committed to delivering superior quality in every project.
-                  </p>
-
-                  {/* Button */}
-                  <button className="w-full group">
-                    <div
-                      className="flex flex-row items-center justify-between bg-rose-800 
-                                      p-3 rounded-xl shadow-lg border border-rose-900
-                                      transition-all duration-300 group-hover:bg-rose-900 
-                                      group-hover:shadow-2xl group-hover:scale-[1.02]"
-                    >
-                      <span className="font-bold text-white text-lg">
-                        Project
-                      </span>
-
-                      <div
-                        className="bg-slate-900 p-2 rounded-lg text-white shadow-md 
-                                     transition-all duration-300 group-hover:bg-rose-700 
-                                     group-hover:translate-x-2 group-hover:shadow-xl"
-                      >
-                        <FaArrowRightFromBracket size={18} />
-                      </div>
-                    </div>
-                  </button>
-                </div>
-              </div>
-
-              {/* image section  */}
-              <div className=" grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-2">
-                {["/p1.jpg", "/p2.jpg", "/p3.jpg", "/p4.jpg"].map((item, i) => (
-                  <div
-                    key={i}
-                    className="flex items-center justify-center p-3 rounded-2xl overflow-hidden relative"
-                  >
-                    <Image
-                      src={item}
-                      alt={item}
-                      fill
-                      className="object-cover rounded-lg transition-all duration-300 hover:translate-x-2"
-                    />
-                  </div>
-                ))}
-              </div>
+              ))}
             </div>
           </div>
         </section>
       </Container>
+
       <div className="mt-1">
         <Fourth />
       </div>
     </>
+  );
+}
+
+function SimpleCard({ img, title, subtitle, desc, btn }) {
+  return (
+    <div className="bg-slate-900 p-5 rounded-2xl shadow-xl hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 space-y-4 relative overflow-hidden w-96 mx-auto">
+      
+      
+      {/* <div className="absolute inset-0  opacity-0 hover:opacity-100 transition-all duration-500"></div> */}
+
+      {/* Top Section */}
+      <div className="flex justify-between items-center relative z-10">
+        <div className="flex items-center gap-3">
+          <Image src={img} alt="image" width={45} height={45} className="rounded-lg" />
+
+          <div className="leading-tight">
+            <span className="text-lg font-semibold text-white">{title}</span>
+            <span className="text-sm text-zinc-400 block">{subtitle}</span>
+          </div>
+        </div>
+
+        <Image
+          src="/shape3.png"
+          alt="shape"
+          width={25}
+          height={25}
+          className="opacity-70"
+        />
+      </div>
+
+    
+      <p className="text-zinc-300 text-sm relative z-10">{desc}</p>
+
+    
+      <button className="w-full group relative z-10">
+        <div
+          className="flex justify-between items-center bg-rose-800 
+          p-3 rounded-xl border border-rose-900 shadow-lg transition-all duration-300 
+          group-hover:bg-rose-900 group-hover:scale-[1.02]"
+        >
+          <span className="text-white font-bold">{btn}</span>
+
+          <div className="bg-slate-900 p-2 rounded-lg text-white group-hover:bg-rose-700 transition-all duration-300 group-hover:translate-x-2">
+            <FaArrowRightFromBracket size={18} />
+          </div>
+        </div>
+      </button>
+    </div>
   );
 }
