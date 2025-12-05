@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import "../components/component.css"
 export default function Blog() {
   const blogs = [
     {
@@ -75,12 +76,13 @@ export default function Blog() {
                 <span className="uppercase text-white text-[14px] font-semibold tracking-wide bg-rose-800 absolute top-0 right-4 p-1 rounded-b-xl ">
                   {blog.title}
                 </span>
-                <div className="flex flex-col  absolute bottom-41 left-0 ">
+                <div className="flex flex-col  ">
                   <svg
                     width="20"
                     height="20"
                     viewBox="0 0 120 120"
                     xmlns="http://www.w3.org/2000/svg"
+                    className="absolute bottom-53 left-0 blog-svg md:bottom-41 "
                   >
                     <polygon points="60,5 110,60 60,115 10,60" fill="#f43f5e" />
 

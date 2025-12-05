@@ -90,3 +90,33 @@
   }
 }
 
+/* Blog card media query adjustments */
+
+@media (max-width: 969px) {
+  .blog-svg {
+    position: absolute;
+    top: 57%;
+    
+  }
+} 
+@media (max-width: 700px) {
+  .blog-svg {
+    position: absolute;
+    top: 51%;
+    
+  }
+} 
+@media (max-width: 556px) {
+  .blog-svg {
+    position: absolute;
+    top: 59%;
+    
+  }
+} 
+@media (max-width: 472px) {
+  .blog-svg {
+    position: absolute;
+    top: 56%;
+    
+  }
+} 
