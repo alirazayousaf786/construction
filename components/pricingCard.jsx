@@ -57,7 +57,7 @@ export default function PricingCard() {
                   relative rounded-3xl overflow-hidden shadow-2xl border border-rose-200
                   bg-white/80 backdrop-blur-xl transition-all duration-500 
                   hover:-translate-y-3 hover:shadow-rose-300 hover:shadow-2xl
-                  group
+                  group hover:border-b-4 hover:border-rose-800
                 "
                 >
                   <div className="absolute -top-20 -right-20 w-60 h-60 bg-rose-900/10 rounded-full blur-3xl"></div>

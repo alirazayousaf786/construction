@@ -40,8 +40,7 @@ export default function PartNerShip() {
               </span>
 
               <p className="text-[15px] text-zinc-300 mt-2">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
-                maxime fugit molestias quo eligendi voluptate nulla adipisci.
+               We agree to work together with trust and commitment to successfully complete all construction projects.any challenges, changes, or requirements, ensuring the successful completion of all construction work.
               </p>
             </div>
 
