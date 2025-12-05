@@ -40,7 +40,10 @@ export default function PartNerShip() {
               </span>
 
               <p className="text-[15px] text-zinc-300 mt-2">
-               We agree to work together with trust and commitment to successfully complete all construction projects.any challenges, changes, or requirements, ensuring the successful completion of all construction work.
+                We agree to work together with trust and commitment to
+                successfully complete all construction projects.any challenges,
+                changes, or requirements, ensuring the successful completion of
+                all construction work.
               </p>
             </div>
 
@@ -83,7 +86,10 @@ We aim to build spaces that add value, look outstanding, and remain durable for 
 
             <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-3 rounded-2xl">
               {["/p1.jpg", "/p2.jpg", "/p3.jpg", "/p4.jpg"].map((item, i) => (
-                <div key={i} className="relative rounded-xl overflow-hidden group h-40 sm:h-48">
+                <div
+                  key={i}
+                  className="relative rounded-xl overflow-hidden group h-40 sm:h-48"
+                >
                   <Image
                     src={item}
                     alt={item}
@@ -109,7 +115,13 @@ function SimpleCard({ img, title, subtitle, desc, btn }) {
     <div className="bg-slate-900 p-5 rounded-2xl shadow-xl hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 w-full mx-auto space-y-4 relative overflow-hidden">
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-3">
-          <Image src={img} alt="image" width={50} height={50} className="rounded-lg" />
+          <Image
+            src={img}
+            alt="image"
+            width={50}
+            height={50}
+            className="rounded-lg"
+          />
           <div className="leading-tight">
             <span className="text-lg font-semibold text-white">{title}</span>
             <span className="text-sm text-zinc-400 block">{subtitle}</span>

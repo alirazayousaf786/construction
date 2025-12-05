@@ -15,7 +15,7 @@ export default function PricingCard() {
         "For each project we establish relationships with partners who provide value.",
       button: "Get Started",
       icon: <FaArrowRightToBracket />,
-      image: "/safety.webp",
+      image: "/p1.jpg",
     },
     {
       plan: "PREMIUM PLAN",
@@ -25,7 +25,7 @@ export default function PricingCard() {
         "Designed for teams who need advanced collaboration and premium support.",
       button: "Get Started",
       icon: <FaArrowRightToBracket />,
-      image: "/safety.webp",
+      image: "/p2.jpg",
       populer: "Popular",
     },
     {
@@ -36,7 +36,7 @@ export default function PricingCard() {
         "A comprehensive package for enterprises requiring tailored solutions.",
       button: "Get Started",
       icon: <FaArrowRightToBracket />,
-      image: "/safety.webp",
+      image: "/p3.jpg",
     },
   ];
 
