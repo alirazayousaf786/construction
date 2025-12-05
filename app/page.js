@@ -15,7 +15,7 @@ export default function Home() {
     <Hero />
     <PartnerShip />
    <Card />
-  <Service />
+  <Service  />
    <PricingCard />
   <Team />
    <FormSubmit />

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Container from "@/components/container";
 import Image from "next/image";
 import { FaStar } from "react-icons/fa6";
@@ -34,17 +34,26 @@ export default function About() {
   return (
     <>
       {/* Hero Section */}
-      <section 
+      <section
         className="relative bg-[url('/bg.jpg')] bg-cover bg-center h-[350px] md:h-[450px] flex items-center justify-center"
         suppressHydrationWarning
       >
-        <div className="absolute inset-0 top-section-main" suppressHydrationWarning></div>
-        <div className="relative text-center text-white px-4 animate-fade-up" suppressHydrationWarning>
+        <div
+          className="absolute inset-0 top-section-main"
+          suppressHydrationWarning
+        ></div>
+        <div
+          className="relative text-center text-white px-4 animate-fade-up"
+          suppressHydrationWarning
+        >
           <h1 className="text-5xl md:text-7xl font-extrabold mb-4 tracking-wider drop-shadow-2xl">
             About Us
           </h1>
           <hr className="border-t-4 border-rose-500 w-24 md:w-32 mx-auto mb-5 shadow-lg" />
-          <div className="flex justify-center gap-2 text-lg md:text-xl font-semibold" suppressHydrationWarning>
+          <div
+            className="flex justify-center gap-2 text-lg md:text-xl font-semibold"
+            suppressHydrationWarning
+          >
             <span className="hover:text-rose-300 cursor-pointer transition-all">
               Home
             </span>
@@ -56,26 +65,25 @@ export default function About() {
 
       <Container>
         <section className="space-y-16 py-10">
-          
           {/* Company Introduction Section */}
-          <div 
+          <div
             className="w-full bg-gradient-to-br from-slate-50 to-slate-100 rounded-3xl md:rounded-tl-[100px] md:rounded-br-[100px] flex flex-col md:flex-row items-center justify-center relative py-12 md:py-20 px-6 overflow-hidden shadow-xl"
             suppressHydrationWarning
           >
-            <div className="max-w-[800px] mx-auto text-black flex flex-col gap-4 z-10 text-center md:text-left ">
-              <h1 className="text-4xl md:text-5xl font-extrabold text-rose-800 tracking-tight">
+            <div className="max-w-4xl mx-auto text-black flex flex-col gap-4 z-10 text-center md:text-left px-4 sm:px-6">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-rose-800 tracking-tight">
                 AY Construction
               </h1>
-              <div className="w-[600px] mx-auto md:mx-0">
-                <p className="text-slate-700 text-base md:text-lg leading-relaxed">
-                Building tomorrows landmarks with todays innovation. We combine cutting-edge technology 
-                with decades of expertise to transform visions into reality. Our commitment to excellence 
-                ensures every project exceeds expectations.
-              </p>
+              <div className=" sm:w-[90%] md:w-93 mx-auto md:mx-0">
+                <p className="text-slate-700  text-sm sm:text-base md:text-lg leading-relaxed text-center md:text-left">
+                  Building tomorrows landmarks with todays innovation. We
+                  combine cutting-edge technology with decades of expertise to
+                  transform visions into reality. Our commitment to excellence
+                  ensures every project exceeds expectations.
+                </p>
               </div>
             </div>
 
-           
             <div className="hidden md:block">
               <Image
                 src="/blog_1.jpg"
@@ -83,10 +91,15 @@ export default function About() {
                 width={220}
                 height={220}
                 className="object-cover rounded-2xl shadow-2xl absolute bottom-5 left-8 lg:left-10  hover:scale-105 transition-transform duration-300"
-                style={{ width: 'auto', height: 'auto' }}
+                style={{
+                  width: "auto",
+                  height: "auto",
+                  clipPath:
+                    "polygon(0% 0%, 100% 0%, 100% 80%, 75% 100%, 25% 90%, 0% 100%)",
+                }}
               />
             </div>
-            
+
             <div className="hidden md:block">
               <Image
                 src="/formimage.jpg"
@@ -94,16 +107,21 @@ export default function About() {
                 width={220}
                 height={220}
                 className="object-cover rounded-2xl shadow-2xl absolute top-5 right-8 lg:right-14  hover:scale-105 transition-transform duration-300"
-                style={{ width: 'auto', height: 'auto' }}
+                style={{
+                  width: "auto",
+                  height: "auto",
+                  clipPath:
+                    "polygon(0% 0%, 100% 0%, 100% 80%, 75% 100%, 25% 90%, 0% 100%)",
+                }}
               />
             </div>
           </div>
 
-          
           <div className="w-full grid lg:grid-cols-2 grid-cols-1 gap-10 md:gap-16">
-            
-          
-            <div className="flex items-center justify-center" suppressHydrationWarning>
+            <div
+              className="flex items-center justify-center"
+              suppressHydrationWarning
+            >
               <div className="flex flex-col gap-5 w-full px-4 md:px-0">
                 {data.map((item, index) => (
                   <div
@@ -127,17 +145,21 @@ export default function About() {
               </div>
             </div>
 
-           
-            <div className="relative flex items-center justify-center py-10 px-4" suppressHydrationWarning>
+            <div
+              className="relative flex items-center justify-center py-10 px-4"
+              suppressHydrationWarning
+            >
               <div className="relative w-full max-w-[500px]">
-             
                 <div className="relative w-full aspect-square">
                   <Image
                     src="/p1.jpg"
                     alt="Main Project"
                     fill
                     className="object-cover rounded-3xl shadow-2xl"
-                   
+                    style={{
+                      clipPath:
+                        "polygon(20% 0%, 80% 0%, 100% 30%, 100% 70%, 80% 100%, 20% 100%, 0% 70%, 0% 30%)",
+                    }}
                   />
                 </div>
 
@@ -164,13 +186,13 @@ export default function About() {
             </div>
           </div>
 
-          {/* Mission Section */}
+          {/* last mission section */}
           <div className="grid lg:grid-cols-2 grid-cols-1 gap-8 md:gap-12 items-center">
-            
-          
-            <div className="relative p-4 flex justify-center lg:justify-start" suppressHydrationWarning>
+            <div
+              className="relative p-4 flex justify-center lg:justify-start"
+              suppressHydrationWarning
+            >
               <div className="relative w-full max-w-[450px]">
-               
                 <div className="relative w-full h-64 md:h-80">
                   <Image
                     src="/service-3.jpg"
@@ -178,12 +200,11 @@ export default function About() {
                     fill
                     className="object-cover rounded-3xl shadow-2xl"
                     style={{
-                      clipPath: 'polygon(0% 15%, 85% 0%, 100% 85%, 15% 100%)',
+                      clipPath: "polygon(0% 15%, 85% 0%, 100% 85%, 15% 100%)",
                     }}
                   />
                 </div>
 
-               
                 <div className="absolute top-12 md:top-20 right-0 md:-right-8 w-28 h-28 md:w-40 md:h-40 z-10">
                   <Image
                     src="/safety-briefing.webp"
@@ -195,39 +216,51 @@ export default function About() {
               </div>
             </div>
 
-          
-            <div className="p-4 md:p-8 flex flex-col gap-6" suppressHydrationWarning>
+            <div
+              className=" p-4 md:p-8 flex flex-col gap-6 sm:w-full"
+              suppressHydrationWarning
+            >
               <div>
-                <h1 className="text-3xl md:text-5xl font-extrabold mb-5 text-rose-800 tracking-tight">
+                <h1 className="text-3xl md:text-5xl font-extrabold mb-5 text-rose-800 tracking-tight ">
                   Our Mission
                 </h1>
-                <p className="text-sm md:text-lg text-slate-700 leading-relaxed">
-                  Our mission is to provide exceptional construction services that
-                  consistently exceed client expectations. We strive to deliver
-                  innovative solutions tailored to the unique needs of each
-                  project, ensuring high-quality workmanship and sustainable practices.
+                <p className="text-sm md:text-lg text-slate-700 leading-relaxed ">
+                  Our mission is to provide exceptional construction services
+                  that consistently exceed client expectations. We strive to
+                  deliver innovative solutions tailored to the unique needs of
+                  each project, ensuring high-quality workmanship and
+                  sustainable practices.
                 </p>
               </div>
 
               <div className="flex flex-col gap-4 text-sm md:text-base">
                 <div className="flex gap-3 items-center bg-green-50 p-3 rounded-xl hover:bg-green-100 transition-colors">
                   <IoCheckmarkDoneSharp className="text-green-700 text-xl flex-shrink-0" />
-                  <span className="font-medium text-slate-800">Fostering Sustainable Growth</span>
+                  <span className="font-medium text-slate-800">
+                    Fostering Sustainable Growth
+                  </span>
                 </div>
                 <div className="flex gap-3 items-center bg-green-50 p-3 rounded-xl hover:bg-green-100 transition-colors">
                   <IoCheckmarkDoneSharp className="text-green-700 text-xl flex-shrink-0" />
-                  <span className="font-medium text-slate-800">Innovating for a Sustainable Future</span>
+                  <span className="font-medium text-slate-800">
+                    Innovating for a Sustainable Future
+                  </span>
                 </div>
                 <div className="flex gap-3 items-center bg-green-50 p-3 rounded-xl hover:bg-green-100 transition-colors">
                   <IoCheckmarkDoneSharp className="text-green-700 text-xl flex-shrink-0" />
-                  <span className="font-medium text-slate-800">Customer-Centric Approach</span>
+                  <span className="font-medium text-slate-800">
+                    Customer-Centric Approach
+                  </span>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Video Section */}
-          <div className="w-full h-72 md:h-[500px] relative rounded-3xl overflow-hidden shadow-2xl group" suppressHydrationWarning>
+          <div
+            className="w-full h-72 md:h-[500px] relative rounded-3xl overflow-hidden shadow-2xl group"
+            suppressHydrationWarning
+          >
             <Image
               src="/vedio-img.jpg"
               alt="Video Preview"
@@ -235,19 +268,18 @@ export default function About() {
               className="object-cover group-hover:scale-105 transition-transform duration-700"
             />
 
-           
             <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors"></div>
 
-            
-            <div className="absolute inset-0 flex items-center justify-center" suppressHydrationWarning>
+            <div
+              className="absolute inset-0 flex items-center justify-center"
+              suppressHydrationWarning
+            >
               <div className="relative cursor-pointer">
-              
                 <span className="absolute inset-0 flex items-center justify-center">
                   <span className="absolute inline-flex h-20 w-20 md:h-28 md:w-28 animate-ping rounded-full bg-rose-600 opacity-75"></span>
                   <span className="relative inline-flex h-20 w-20 md:h-28 md:w-28 rounded-full bg-rose-700 opacity-0"></span>
                 </span>
 
-                
                 <div className="relative text-white flex items-center justify-center z-10 hover:scale-110 transition-transform">
                   <div className="bg-white/20 backdrop-blur-sm rounded-full p-6 md:p-8">
                     <svg
@@ -263,7 +295,6 @@ export default function About() {
               </div>
             </div>
           </div>
-
         </section>
       </Container>
     </>

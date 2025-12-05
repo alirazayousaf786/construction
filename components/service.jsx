@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import { GoArrowUpRight } from "react-icons/go";
 import { IoClose } from "react-icons/io5";
+import { createPortal } from "react-dom";
+
 import Image from "next/image";
 
 export default function Services() {
@@ -115,7 +117,7 @@ export default function Services() {
 
         {/* pop up section */}
         {open && service && (
-          <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex justify-center items-center z-[999px] animate-fadeIn ">
+          <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex justify-center items-center z-[999999px] animate-fadeIn ">
             <div className="bg-white/20 backdrop-blur-2xl p-7 rounded-2xl shadow-2xl border border-white/30 max-w-lg w-[90%] relative animate-scaleUp mt-5">
               <button
                 onClick={handleClose}
@@ -145,9 +147,13 @@ export default function Services() {
                   Contact Us
                 </button>
               </div>
+              
             </div>
+            
           </div>
+          
         )}
+        
       </section>
     </>
   );
