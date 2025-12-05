@@ -38,7 +38,6 @@ export default function Header() {
               AY CONSTRUCTION
             </h1>
 
-            {/* Time */}
             <div className="flex items-center gap-2">
               <FaBusinessTime size={32} className="text-white" />
               <div className="text-white text-sm">
@@ -47,7 +46,6 @@ export default function Header() {
               </div>
             </div>
 
-            {/* Phone */}
             <div className="flex items-center gap-2">
               <BsTelephoneFill size={28} className="text-white" />
               <div className="text-white text-sm">
@@ -56,7 +54,6 @@ export default function Header() {
               </div>
             </div>
 
-            {/* Email */}
             <div className="flex items-center gap-2">
               <MdMarkEmailUnread size={30} className="text-white" />
               <div className="text-white text-sm">
@@ -65,7 +62,6 @@ export default function Header() {
               </div>
             </div>
 
-            {/* Mobile Toggle Button */}
             <div
               className="md:hidden text-white text-3xl z-99 "
               onClick={() => setOpen(!open)}
@@ -78,9 +74,9 @@ export default function Header() {
         <div
           className={`${
             sticky
-              ? "fixed top-0 left-0 w-full shadow-lg z-200 bg-rose-800"
-              : "absolute  w-full  "
-          }  header-navbar`}
+              ? "fixed top-0 left-0 w-full shadow-lg z-[9999] bg-rose-800"
+              : "absolute  w-full"
+          } header-navbar`}
         >
           <div className="flex items-center justify-between gap-5 p-3 max-w-[1300px] mx-auto">
             <ul className="hidden md:flex items-center gap-10 relative">
@@ -113,10 +109,7 @@ export default function Header() {
                   PAGES <FaAngleDown />
                 </div>
 
-                
-                <div
-                  className="absolute top-10 left-0 p-4 hover:border-b-4 hover:border-b-rose-800 bg-white text-rose-800 rounded-md shadow-lg w-40 opacity-0 invisible group-hover:opacity-100 group-hover:visible  transition-all duration-300 z-99 "
-                >
+                <div className="absolute top-10 left-0 p-4 hover:border-b-4 hover:border-b-rose-800 bg-white text-rose-800 rounded-md shadow-lg w-40 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-99">
                   <Link
                     href="/blog"
                     className="block px-4 py-2 hover:bg-rose-200 rounded-2xl"
@@ -146,39 +139,37 @@ export default function Header() {
             </span>
           </div>
 
-          {/* MOBILE MENU */}
           {open && (
-            <div className="md:hidden bg-rose-900 px-5 py-3 animate-slide-down ">
+            <div className="md:hidden bg-rose-800 px-5 py-3 animate-slide-left fixed top-20 left-0 w-full h-[500px] z-[999999] overflow-auto">
               <ul className="flex flex-col gap-4 text-white text-lg">
                 <li className={isActive("/")}>
-                  <Link href="/">HOME</Link>
+                  <Link href="/" onClick={() => setOpen(false)}>HOME</Link>
                 </li>
 
                 <li className={isActive("/about")}>
-                  <Link href="/about">ABOUT</Link>
+                  <Link href="/about" onClick={() => setOpen(false)}>ABOUT</Link>
                 </li>
 
                 <li className={isActive("/servicess")}>
-                  <Link href="/servicess">SERVICE</Link>
+                  <Link href="/servicess" onClick={() => setOpen(false)}>SERVICE</Link>
                 </li>
 
                 <li className={isActive("/team")}>
-                  <Link href="/team">TEAM</Link>
+                  <Link href="/team" onClick={() => setOpen(false)}>TEAM</Link>
                 </li>
 
                 <li className={isActive("/project")}>
-                  <Link href="/project">PROJECT</Link>
+                  <Link href="/project" onClick={() => setOpen(false)}>PROJECT</Link>
                 </li>
 
                 <li className={isActive("/contact")}>
-                  <Link href="/contact">CONTACT</Link>
+                  <Link href="/contact" onClick={() => setOpen(false)}>CONTACT</Link>
                 </li>
-                
               </ul>
 
               <div className="mt-4">
                 <div
-                  className="text-white flex items-center gap-2 cursor-pointer"
+                  className="text-white flex items-center gap-2 cursor-pointer z-[9998]"
                   onClick={() => setSelectOpen(!selectOpen)}
                 >
                   PAGES <FaAngleDown />
@@ -189,12 +180,14 @@ export default function Header() {
                     <Link
                       href="/blog"
                       className="block px-4 py-2 hover:bg-rose-200"
+                      onClick={() => setOpen(false)}
                     >
                       Blog
                     </Link>
                     <Link
                       href="/career"
                       className="block px-4 py-2 hover:bg-rose-200"
+                      onClick={() => setOpen(false)}
                     >
                       Careers
                     </Link>
@@ -202,6 +195,7 @@ export default function Header() {
                     <Link
                       href="/gallery"
                       className="block px-4 py-2 hover:bg-rose-200"
+                      onClick={() => setOpen(false)}
                     >
                       Gallery
                     </Link>
